@@ -8,42 +8,67 @@
         <title>Result</title>
     </head>
     <%
-        
         double HW1 = Double.parseDouble(request.getParameter("HW"));
         double HP1 = Double.parseDouble(request.getParameter("HP"));
         double POS1 = Double.parseDouble(request.getParameter("PTD"));
         double POTD1 = Double.parseDouble(request.getParameter("POTD"));
+        double overtime=0;
+        double overrate=0;
+        double overpay=0;
+        double normalpay=0;
+        double grossPay=0;
+        double taxablePay=0;
+        double taxAmount=0;
+        if(HW1 > 40){
+            overtime = HW1 - 40;
+            overrate = HP1 * 1.5;
+            overpay = overtime * overrate;
+            normalpay = 40 * HP1;
+            grossPay = overpay + normalpay;    
+        }
+        else{
+            grossPay = HW1 * HP1;
+        }
+        taxablePay = grossPay - POS1;
+        if(grossPay < 500){
+            taxAmount = taxablePay * 0.18;
+        }
+        else{
+            taxAmount = taxablePay * 0.22;
+        }
+        
+        double postTaxPay = taxablePay - taxAmount;
+        double netPay = postTaxPay - POTD1;
+        
     %>
     <body>
         <div class="result">
-            <h1>Salary Info</h1>
+            <h1>Salary Information</h1>
         <hr>
         <form name="demoForm" action="results.jsp" method="post">
-            <label>Total Hours Worked:</label><input class="tbox" type="text" name="HW" value="<%=HW1%>" size="50">
-            <br>
-            <label>Hourly Rate:</label><input class="tbox" type="text" name="HP" value="" size="50">
-            <br>
-            <label># Hours Overtime:</label><input class="tbox" type="text" name="HW" value="<%=HW1%>" size="50">
-            <br>
-            <label>Overtime Hourly Rate:</label><input class="tbox" type="text" name="HP" value="" size="50">
-            <br>
-            <label>Gross Pay:</label><input class="tbox" type="text" name="HW" value="<%=HW1%>" size="50">
-            <br>
-            <label>Pre-tax Deduct:</label><input class="tbox" type="text" name="HP" value="" size="50">
-            <br>
-            <label>Pre-tax pay:</label><input class="tbox" type="text" name="HP" value="" size="50">
-            <br>
-            <label>Tax Amount:</label><input class="tbox" type="text" name="PTD" value="" size="50">
-            <br>
-            <label>Post-tax pay:</label><input class="tbox" type="text" name="HP" value="" size="50">
-            <br>
-            <label>Net Pay:</label><input class="tbox" type="text" name="HP" value="" size="50">
-            <br>
-            
-            <br> <input type="submit" value="Submit" id="submit">
-                 <input type="reset" value="Clear" id="clear">
-        </form>>
-        
+            <label>Total Hours Worked:</label><%=HW1%>
+            <br><hr>
+            <label>Hourly Rate:</label><%=HP1%>
+            <br><hr>
+            <label># Hours Overtime:</label><%=overtime%>
+            <br><hr>
+            <label>Overtime Hourly Rate:</label><%=overrate%>
+            <br><hr>
+            <label>Gross Pay:</label><%=grossPay%>
+            <br><hr>
+            <label>Pre-tax Deduct:</label><%=POS1%>
+            <br><hr>
+            <label>Pre-tax pay:</label><%=taxablePay%>
+            <br><hr>
+            <label>Tax Amount:</label><%=taxAmount%>
+            <br><hr>
+            <label>Post-tax pay:</label><%=postTaxPay%>
+            <br><hr>
+            <label>Post-tax Deduct:</label><%=POTD1%>
+            <br><hr>
+            <label>Net Pay:</label><%=netPay%>
+            <br><hr>
+        </form>
         
         
         </div>
