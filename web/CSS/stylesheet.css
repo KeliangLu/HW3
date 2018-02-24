@@ -23,7 +23,6 @@ input[type="text"], input[type="email"]{
     margin-top:5px;
     margin-bottom: 5px;
     display: white;
-       
 }
 
 .result {
@@ -38,8 +37,4 @@ input[type="text"], input[type="email"]{
     margin-bottom:50px;
     display: white;
        
-}
-
-.table2{
-    text-align: center;
 }

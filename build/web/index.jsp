@@ -9,7 +9,7 @@
 
     <body>
         
-        <div class="info">
+        <div class="info" style="text-aligh:center">
             <h1>Simple Salary Calculator</h1>
             <hr>
             <form name="demoForm" action="results.jsp" method="post">
