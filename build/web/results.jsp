@@ -45,32 +45,66 @@
         <div class="result">
             <h1>Salary Information</h1>
         <hr>
-        <form name="demoForm" action="results.jsp" method="post">
-            <label>Total Hours Worked:</label><%=HW1%>
-            <br><hr>
-            <label>Hourly Rate:</label><%=HP1%>
-            <br><hr>
-            <label># Hours Overtime:</label><%=overtime%>
-            <br><hr>
-            <label>Overtime Hourly Rate:</label><%=overrate%>
-            <br><hr>
-            <label>Gross Pay:</label><%=grossPay%>
-            <br><hr>
-            <label>Pre-tax Deduct:</label><%=POS1%>
-            <br><hr>
-            <label>Pre-tax pay:</label><%=taxablePay%>
-            <br><hr>
-            <label>Tax Amount:</label><%=taxAmount%>
-            <br><hr>
-            <label>Post-tax pay:</label><%=postTaxPay%>
-            <br><hr>
-            <label>Post-tax Deduct:</label><%=POTD1%>
-            <br><hr>
-            <label>Net Pay:</label><%=netPay%>
-            <br><hr>
-        </form>
-        
-        
+            <div class="table2">
+                <table border="1">
+                    <tbody>
+                        <tr>
+                            <td>Total Hours Worked:</td>
+                            <td><%=HW1%></td>
+                        </tr>
+
+                        <tr>
+                            <td>Hourly Rate:</td>
+                            <td><%=HP1%></td>
+                        </tr>
+
+                        <tr>
+                            <td># Hours Overtime:</td>
+                            <td><%=overtime%></td>
+                        </tr>
+
+                        <tr>
+                            <td>Overtime Hourly Rate:</td>
+                            <td><%=overrate%></td>
+                        </tr>
+
+                        <tr>
+                            <td>Gross Pay:</td>
+                            <td><%=grossPay%></td>
+                        </tr>
+
+                        <tr>
+                            <td>Pre-tax Deduct:</td>
+                            <td><%=POS1%></td>
+                        </tr>
+
+                        <tr>
+                            <td>Pre-tax pay:</td>
+                            <td><%=taxablePay%></td>
+                        </tr>
+
+                        <tr>
+                            <td>Tax Amount:</td>
+                            <td><%=taxAmount%></td>
+                        </tr>
+
+                        <tr>
+                            <td>Post-tax pay:</td>
+                            <td><%=postTaxPay%></td>
+                        </tr>
+
+                        <tr>
+                            <td>Post-tax Deduct:</td>
+                            <td><%=POTD1%></td>
+                        </tr>
+
+                        <tr>
+                            <td>Net Pay:</td>
+                            <td><%=netPay%></td>
+                        </tr>              
+                    </tbody>
+                </table>
+            </div>  
         </div>
     </body>
 </html>
